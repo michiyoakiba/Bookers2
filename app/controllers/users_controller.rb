@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @book_new = Book.new
     @user = User.find(params[:id])
-    @post_images = @user.post_images
+    @books = @user.books
   end
 
   def edit
