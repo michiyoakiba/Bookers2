@@ -20,24 +20,26 @@
     </tbody>
   </table>
   <div class="row">
-    <i class="fas fa-user-cog"></i>
-    <a class="btn btn-out-outline-secondary btn-block edit_user_id">
-    </a>
   </div>
   </div>
 
-  <a class="btn btn-outline-secondary btn-block edit_user_id" hrel="/users/id/edit"></a>
+  <%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block edit_user_#{@user.id}" do %>
+  <i class="fas fa-user-cog"></i>
+  <% end %>
+
  <h2 class = "mt-3">New book</h2>
 
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<%= form_with model: @user, url: '/books', method: :post do |f| %>
   <h5>Tiile</h5>
   <%= f. text_field :title %>
 
   <h5>Opinion</h5>
   <%= f. text_area :body %>
 </br>
-  <%= f. submit 'Create Book' %>
+  <%= f. submit 'Create Book',class:"btn btn-sm btn-success btn-block-auto" %>
 <% end %>
+
+
 
 </div>
  <div class="col-lg-8 offset-md-1">
@@ -45,6 +47,7 @@
 <table class="table table-hover table-inverse">
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Opinion</th>
       <th colspan="3"></th>
@@ -52,6 +55,5 @@
   </thead>
   </table>
 </div>
-
 </div>
-
+</div>
