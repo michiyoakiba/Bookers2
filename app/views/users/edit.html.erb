@@ -7,16 +7,15 @@
 
     <%= form_with model: @user, method: :patch do |f| %>
       <h4>Name</h4>
-      <%= f. text_field :name %>
+      <%= f.text_field :name %>
 
       <h4>Image</h4>
-      <input class="form-control-file user_image" accept="imagr/*"
-      type="file" name="[profile_image]" id="user_profile_image">
+      <%= f.file_field :profile_image %>
 
       <h4>Introduction</h4>
-      <%= f. text_area :introduction %>
+      <%= f.text_area :introduction %>
       </br>
-      <%= f. submit 'Update user' %>
+      <%= f.submit 'Update user' %>
     <% end %>
     </div>
   </div>
